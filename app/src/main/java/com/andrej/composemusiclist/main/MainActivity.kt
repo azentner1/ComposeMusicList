@@ -3,15 +3,12 @@ package com.andrej.composemusiclist.main
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.material.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.compose.rememberNavController
+import com.andrej.composemusiclist.base.ui.navigation.NavigationComponent
 import com.andrej.composemusiclist.base.ui.theme.ComposeMusicListTheme
 import com.andrej.composemusiclist.feature.home.repository.HomeRepository
-import com.andrej.composemusiclist.feature.home.ui.HomeComponent
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -29,7 +26,8 @@ class MainActivity : ComponentActivity() {
         }
         setContent {
             ComposeMusicListTheme {
-                HomeComponent()
+                val navController = rememberNavController()
+                NavigationComponent(navController = navController)
             }
         }
     }

@@ -6,5 +6,7 @@ data class Album(
     @SerializedName("id") val id: String,
     @SerializedName("name") val name: String,
     @SerializedName("artistName") val artistName: String,
-    @SerializedName("artworkUrl100") val artworkUrl: String
+    @SerializedName("artworkUrl100") val artworkUrl: String,
+    @SerializedName("releaseDate") val releaseDate: String,
+    @SerializedName("genres") val genres: List<Genre>
 )

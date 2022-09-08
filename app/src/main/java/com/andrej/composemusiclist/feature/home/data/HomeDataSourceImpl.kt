@@ -25,18 +25,18 @@ class HomeDataSourceImpl(
                     call: Call<HomeResponse>,
                     response: Response<HomeResponse>
                 ) {
-                    val k = 1
-                    println(response.raw().body)
-                    if (response.isSuccessful) {
-                        it.resume(DataResult.Success(homeDataMapper.mapFromEntity(response.body())))
-                    } else {
-                        it.resume(DataResult.Error(ErrorEntity.Network))
+                    when {
+                        response.isSuccessful -> {
+                            it.resume(DataResult.Success(homeDataMapper.mapFromEntity(response.body())))
+                        }
+                        else -> {
+                            it.resume(DataResult.Error(ErrorEntity.Network))
+                        }
                     }
 
                 }
 
                 override fun onFailure(call: Call<HomeResponse>, t: Throwable) {
-                    val n = 2
                     it.resume(DataResult.Error(ErrorEntity.Unknown))
                 }
             })

@@ -1,13 +1,11 @@
-package com.andrej.composemusiclist.base.realm
+package com.andrej.composemusiclist.base.model.realm
 
 import io.realm.RealmObject
 import io.realm.annotations.PrimaryKey
 
-open class AlbumRealm : RealmObject() {
+open class GenreRealm : RealmObject() {
     @PrimaryKey
     var id: String = ""
     var name: String = ""
-    var artistName = ""
-    var artworkUrl = ""
-
+    var url: String = ""
 }
