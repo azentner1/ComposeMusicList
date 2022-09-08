@@ -24,3 +24,4 @@ Modularization was an overkill here, but you can find my modularized app example
 https://github.com/azentner1/Stopwatch-Compose
 
 ## Video
+https://drive.google.com/file/d/1pqZfodnB682m6kQRx5DvBlEErAGuBZ_n
