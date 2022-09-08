@@ -143,10 +143,12 @@ fun GenrePill(modifier: Modifier, genres: List<Genre>) {
         shape = RoundedCornerShape(50.dp),
         border = BorderStroke(width = 1.dp, color = BrightBlue)
     ) {
-        Text(
-            modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp),
-            text = genres.first().name,
-            style = AlbumDetailGenrePillStyle
-        )
+        if(genres.isNotEmpty()) {
+            Text(
+                modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp),
+                text = genres.first().name,
+                style = AlbumDetailGenrePillStyle
+            )
+        }
     }
 }
